@@ -26,10 +26,21 @@ class App extends React.Component {
     });
   };
 
+  onFormSubmit = async term => {
+    var url = `https://newsapi.org/v2/everything?q=${term}&sortBy=popularity&apiKey=23523739d9f1492291dbaa6a7f7393a1`;
+
+    news.get(url).then(response => {
+      this.articles = response.data.articles;
+      this.setState({
+        newsItems: this.articles
+      });
+    });
+  };
+
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onFormSubmit={this.onFormSubmit} />
         <NewsFeed newsItems={this.state.newsItems} />
       </div>
     );

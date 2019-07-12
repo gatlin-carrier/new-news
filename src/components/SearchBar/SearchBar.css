@@ -1,0 +1,28 @@
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+input {
+  width: 800px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  border: none;
+  font-size: 17px;
+  padding-left: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 19px 260px;
+  color: gray;
+}
