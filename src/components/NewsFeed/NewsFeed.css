@@ -1,0 +1,13 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  width: 400px;
+  height: auto;
+  margin: 15px;
+}
+
+.middle {
+  margin-bottom: 10px !important;
+}

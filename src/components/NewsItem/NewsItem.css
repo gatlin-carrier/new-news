@@ -1,0 +1,36 @@
+.NewsItem {
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #dadce0;
+  border-style: solid;
+  margin-bottom: 15px;
+}
+
+.container {
+  padding: 5px 16px;
+}
+
+img {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  color: darkgray;
+  font-size: 14px;
+}
