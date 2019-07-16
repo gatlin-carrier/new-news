@@ -1,15 +1,22 @@
 import React from "react";
 import NewsFeed from "./NewsFeed/NewsFeed";
 import SearchBar from "./SearchBar/SearchBar";
+import WeatherFeed from "./WeatherFeed/WeatherFeed";
 import news from "../apis/news";
+import weather from "../apis/weather";
+import "./App.css";
 
 class App extends React.Component {
   state = {
-    newsItems: []
+    newsItems: [],
+    longitude: "",
+    latitude: "",
+    forecast: []
   };
 
   componentWillMount() {
     this.getNewsItems();
+    this.getLocation();
   }
 
   getNewsItems = () => {
@@ -37,11 +44,46 @@ class App extends React.Component {
     });
   };
 
+  getLocation = () => {
+    "geolocation" in navigator
+      ? navigator.geolocation.getCurrentPosition(position => {
+          this.setState({
+            longitude: position.coords.longitude,
+            latitude: position.coords.latitude
+          });
+          this.getWeather();
+        })
+      : console.log("geolocation is not enabled on this browser");
+  };
+
+  getWeather = async () => {
+    const forecast = await weather.get(
+      `${this.state.latitude},${this.state.longitude}`
+    );
+    this.setState({
+      forecast: forecast
+    });
+
+    console.log(this.state.forecast);
+  };
+
   render() {
     return (
       <div>
-        <SearchBar onFormSubmit={this.onFormSubmit} />
-        <NewsFeed newsItems={this.state.newsItems} />
+        <SearchBar className="searchBar" onFormSubmit={this.onFormSubmit} />
+        <div className="wrapper">
+          <div className="row">
+            <div className="column">
+              <NewsFeed className="newsFeed" newsItems={this.state.newsItems} />
+            </div>
+            <div className="column">
+              <WeatherFeed
+                className="weatherFeed"
+                forecast={this.state.forecast}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

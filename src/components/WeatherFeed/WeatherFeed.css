@@ -1,0 +1,13 @@
+.flex-container {
+  padding-right: 50px;
+}
+
+.flex-item {
+  width: 700px;
+  height: auto;
+  margin: 15px;
+}
+
+.middle {
+  margin-bottom: 10px !important;
+}

@@ -1,11 +1,9 @@
 .container {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
 }
 
 input {
+  margin-left: 300px;
   width: 800px;
   height: 50px;
   border-radius: 10px;

@@ -1,5 +1,5 @@
 .flex-container {
-  display: flex;
+  padding-left: 50px;
 }
 
 .flex-item {

@@ -4,7 +4,7 @@ import NewsItem from "../NewsItem/NewsItem";
 
 const NewsFeed = ({ newsItems }) => {
   const renderedList = newsItems.map(newsItem => {
-    return <NewsItem newsItem={newsItem} key={newsItem.publishedAt} />;
+    return <NewsItem newsItem={newsItem} key={newsItem.url} />;
   });
 
   return (
