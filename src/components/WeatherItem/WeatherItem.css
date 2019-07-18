@@ -8,19 +8,33 @@
   color: darkslategray;
 }
 
-.container {
+.todayContainer {
+  display: flex;
   padding: 5px 16px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-img {
-  border-radius: 10px;
-  width: 100px;
-  height: 100px;
-  float: right;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  object-fit: cover;
+.todayContainer div {
+  flex: 0 0 30%;
+}
+
+.todayContainer .current {
+  height: 100%;
+}
+
+.todayContainer img {
+  height: 70%;
+}
+
+.todayContainer .temp {
+  height: 30%;
+}
+
+.currentWeatherImage {
+  flex-direction: flex-end;
+  height: 75px;
+  width: 75px;
 }
 
 a {
@@ -44,4 +58,24 @@ p {
 .darkSkyLink {
   color: lightslategray;
   font-size: 8px;
+  margin-left: 15px;
+}
+
+.weekContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+
+.dayOfWeek {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black !important;
+}
+
+.dayOfWeek img {
+  height: 50px;
+  width: 50px;
 }
