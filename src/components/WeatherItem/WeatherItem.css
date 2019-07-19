@@ -13,14 +13,12 @@
   padding: 5px 16px;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.todayContainer div {
   flex: 0 0 30%;
 }
 
 .todayContainer .current {
   height: 100%;
+  flex: 0 0 70%;
 }
 
 .todayContainer img {
